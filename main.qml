@@ -7,6 +7,7 @@ ApplicationWindow {
     width: 640
     height: 480
     title: qsTr("Hello World")
+    property alias tabBar: tabBar
 
     SwipeView {
         id: swipeView
