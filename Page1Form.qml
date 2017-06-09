@@ -22,18 +22,22 @@ Item {
             sourceRect: Qt.rect(recControls.x, recControls.y, recControls.width, recControls.height)
         }
         radius: 64
+
+        visible: false // this needs to be invisible for the mask to work
+    }
+    OpacityMask {
+        anchors.fill: fastBlur
+        source: fastBlur
+        maskSource: recFrost
+
         opacity: 0.55
     }
     Rectangle {
         id: recControls
-        x: 171
-        y: 51
         width: 364
         height: 89
         color: "#00000000"
-        radius: 20
-        anchors.horizontalCenterOffset: 0
-        anchors.bottomMargin: 340
+        anchors.bottomMargin: 8
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
 
@@ -54,13 +58,5 @@ Item {
                 text: qsTr("Press Me")
             }
         }
-    }
-
-    Image {
-        id: imgBackground
-        anchors.fill: parent
-        fillMode: Image.PreserveAspectCrop
-        z: -2
-        source: "nature_1.jpg"
     }
 }

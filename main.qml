@@ -13,6 +13,13 @@ ApplicationWindow {
         id: swipeView
         anchors.fill: parent
         currentIndex: tabBar.currentIndex
+        background: Image {
+            id: imgBackground
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectCrop
+            source: "nature_1.jpg"
+        }
+
 
         Page1 {
         }
